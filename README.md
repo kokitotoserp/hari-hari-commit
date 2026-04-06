@@ -3,9 +3,9 @@
 # 🚀 KOKITOTO SERP: The Search Engine Tamer
 **"Menjinakkan Google Search Engine Ranking dengan Keberuntungan & Strategi 1 Hari"**
 
-[![SEO Mastery](https://img.shields.io/badge/SEO-Mastery-orange?style=for-the-badge&logo=google-search-console)](https://github.com/your-username)
-[![Status](https://img.shields.io/badge/Status-Hanya%20Senang%20Senang-blue?style=for-the-badge)](https://github.com/your-username)
-[![Team](https://img.shields.io/badge/Team-Best%20Performance-green?style=for-the-badge)](https://github.com/your-username)
+[![SEO Mastery](https://img.shields.io/badge/SEO-Mastery-orange?style=for-the-badge&logo=google-search-console)](https://github.com/kokitotoserp)
+[![Status](https://img.shields.io/badge/Status-Hanya%20Senang%20Senang-blue?style=for-the-badge)](https://github.com/kokitotoserp)
+[![Team](https://img.shields.io/badge/Team-Best%20Performance-green?style=for-the-badge)](https://github.com/kokitotoserp)
 
 <br>
 
@@ -13,7 +13,7 @@
 
 <br>
 
-> *KOKITOTO SERP adalah sebuah manifestasi dari ambisi kami untuk menyeimbangkan algoritma Google. Dengan mengandalkan ilmu SEO yang dipelajari secara intensif dan sedikit sentuhan keberuntungan, kami hadir untuk menjadi yang terbaik di industri ini.*
+> *KOKITOTO SERP adalah upaya untuk menjinakan google Search Engine Ranking, hanya dengan ilmu SEO 1 hari kami yakin bisa menjinakan google dengan keberuntungan kami. Doakan Team kami menjadi yang terbaik.*
 
 </div>
 
