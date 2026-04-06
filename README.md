@@ -20,8 +20,13 @@
 ---
 
 ### 🛠️ Multi-Language Execution
-Project ini dirancang untuk berjalan di berbagai lingkungan (environment). Pilih perintah yang sesuai dengan kebutuhan deployment Anda:
+Project ini dirancang untuk menjinakan google di SERP. Pilih perintah yang sesuai dengan kebutuhan deployment Anda:
 
-#### 🟢 Node.js / Frontend
+#### 🟢 Node.js
 ```bash
 npm run dev
+
+#### 🟢 python
+```bash
+python main.py
+
