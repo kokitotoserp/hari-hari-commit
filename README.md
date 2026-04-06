@@ -25,8 +25,17 @@ Project ini dirancang untuk menjinakan google di SERP. Pilih perintah yang sesua
 #### 🟢 Node.js
 ```bash
 npm run dev
-
-#### 🟢 python
+```
+#### 🟢 Python
 ```bash
 python main.py
+```
+#### 🟢 King PHP
+```bash
+php -S localhost:8000
+```
 
+#### 🟢 Go
+```bash
+go run .
+```
