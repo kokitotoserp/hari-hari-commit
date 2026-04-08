@@ -9,7 +9,7 @@
 
 <br>
 
-<img src="https://cdn.patenkali.me/i/2026/02/05/pg9v5m-5x2t.webp" width="90%" style="border-radius:15px; border: 2px solid #30363d; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+<img src="https://cdn.patenkali.me/i/2026/02/05/pg9v5m-5x2t.webp" width="90%" style="border-radius:15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 
 <br>
 
