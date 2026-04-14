@@ -25,15 +25,15 @@
       --black:    #090909;
       --dark:     #151515;
       --card:     #1b1b1b;
-      --border:   #777777;
-      --green:    #f2c230;
-      --green2:   #c99710;
-      --gold:     #dddddd;
-      --gold2:    #9d9d9d;
+      --border:   #3d1b1b;
+      --accent:   #ff4d4d;
+      --accent2:  #b31217;
+      --soft:     #ffd9d9;
+      --soft2:    #ffb3b3;
       --red:      #c71f1f;
       --white:    #f4f4f4;
       --muted:    #b4b4b4;
-      --glow-g:   0 0 18px rgba(242,194,48,.42);
+      --glow-r:   0 0 18px rgba(199,31,31,.3);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
@@ -65,16 +65,33 @@
       font-family: 'Rajdhani', sans-serif; font-weight: 700;
       font-size: 13px; letter-spacing: .5px; text-transform: uppercase;
       border: none; border-radius: 6px; padding: 8px 16px; cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .ampx-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -130%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.22) 50%, transparent 100%);
+      transform: skewX(-18deg);
+      animation: buttonShine 3.8s ease-in-out infinite;
+      pointer-events: none;
     }
     .ampx-btn--login {
       background: var(--card);
       border: 1px solid var(--border);
       color: var(--white);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
     }
     .ampx-btn--primary {
       background: linear-gradient(135deg, var(--red), #8f1212);
-      color: #000;
-      box-shadow: var(--glow-g);
+      color: #fff;
+      box-shadow: var(--glow-r);
+      animation: buttonPulse 2.2s ease-in-out infinite;
     }
     .ampx-btn--block {
       display: block; width: 100%; text-align: center;
@@ -82,8 +99,8 @@
     }
     .ampx-btn--outline {
       background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border: 1px solid var(--accent);
+      color: var(--soft);
       font-size: 13px; padding: 8px 16px;
     }
     .ampx-btn--apk {
@@ -98,12 +115,12 @@
     }
     .ampx-apk {
       margin: 14px 14px 0;
-      background: linear-gradient(135deg, #3a0909 0%, #7f1414 40%, #2b2722 100%);
-      border: 1px solid var(--gold);
+      background: linear-gradient(135deg, #260708 0%, #761013 45%, #1b1011 100%);
+      border: 1px solid var(--border);
       border-radius: 14px;
       overflow: hidden;
       position: relative;
-      box-shadow: var(--glow-g), inset 0 0 60px rgba(242,194,48,.06);
+      box-shadow: var(--glow-r), inset 0 0 40px rgba(199,31,31,.08);
     }
     .ampx-apk::before {
       content: '';
@@ -112,8 +129,8 @@
         45deg,
         transparent,
         transparent 18px,
-        rgba(221,221,221,.05) 18px,
-        rgba(221,221,221,.05) 19px
+        rgba(255,255,255,.03) 18px,
+        rgba(255,255,255,.03) 19px
       );
     }
     .ampx-apk__inner {
@@ -123,24 +140,37 @@
     .ampx-apk__content { padding: 16px 14px 16px 16px }
     .ampx-apk__badge {
       display: inline-flex; align-items: center; gap: 5px;
-      background: rgba(221,221,221,.12); border: 1px solid rgba(221,221,221,.35);
-      color: var(--gold); font-size: 10px; font-weight: 700;
+      background: #ff4d4d1a; border: 1px solid rgba(255,77,77,.22);
+      color: var(--soft); font-size: 10px; font-weight: 700;
       letter-spacing: .8px; text-transform: uppercase;
       padding: 3px 8px; border-radius: 20px; margin-bottom: 8px;
     }
-    .ampx-apk__badge::before { content: '🟢'; font-size: 7px; animation: blink 1.2s infinite }
+    .ampx-apk__badge::before { content: '●'; font-size: 8px; color: var(--accent); animation: blink 1.2s infinite }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    @keyframes buttonPulse {
+      0%, 100% { transform: translateY(0); box-shadow: 0 0 0 rgba(199,31,31,0), 0 0 18px rgba(199,31,31,.22); }
+      50% { transform: translateY(-1px); box-shadow: 0 0 0 4px rgba(199,31,31,.08), 0 0 24px rgba(199,31,31,.35); }
+    }
+    @keyframes buttonShine {
+      0%, 55% { left: -130%; }
+      100% { left: 150%; }
+    }
+    @keyframes fabFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
     .ampx-apk__title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.9rem; line-height: .95; color: var(--white);
       margin-bottom: 8px;
     }
-    .ampx-apk__title span { color: var(--green) }
+    .ampx-apk__title span { color: var(--accent) }
     .ampx-apk__pill {
       display: inline-flex; align-items: center; gap: 6px;
-      background: linear-gradient(90deg, var(--gold), var(--gold2));
-      color: #000; font-size: 11px; font-weight: 700;
+      background: linear-gradient(90deg, #3a1012, #761013);
+      color: var(--soft); font-size: 11px; font-weight: 700;
       padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+      border: 1px solid rgba(255,77,77,.2);
     }
     .ampx-apk__actions { display: flex; gap: 8px; flex-wrap: wrap }
     .ampx-apk__visual {
@@ -187,16 +217,17 @@
       display: block;
       fill: currentColor;
     }
-    .ampx-bottom-nav__item.is-active { color: var(--green) }
+    .ampx-bottom-nav__item.is-active { color: var(--accent) }
     .ampx-bottom-nav__item.is-fab {
       position: relative;
     }
     .ampx-bottom-nav__fab {
       width: 46px; height: 46px;
-      background: linear-gradient(135deg, var(--green), var(--green2));
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      margin-top: -20px; border: 3px solid var(--black);
-      box-shadow: var(--glow-g);
+      margin-top: -20px; border: 2px solid var(--black);
+      box-shadow: var(--glow-r);
+      animation: fabFloat 2.6s ease-in-out infinite;
     }
     .ampx-bottom-nav__fab-ico { font-size: 1.3rem }
 
@@ -230,12 +261,27 @@
     .ampx-contact__btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       padding: 10px; border-radius: 10px; font-size: 13px; font-weight: 600; color: #fff;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .ampx-contact__btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 52%;
+      height: 100%;
+      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.18) 50%, transparent 100%);
+      transform: skewX(-18deg);
+      animation: buttonShine 4.4s ease-in-out infinite;
+      pointer-events: none;
     }
     .ampx-contact__btn--wa {
-      background: #25d366; border: 1px solid #1aab52;
+      background: linear-gradient(135deg, #8f1212, #c71f1f); border: 1px solid #6f1010;
     }
     .ampx-contact__btn--tg {
-      background: #229ed9; border: 1px solid #1a85b8;
+      background: linear-gradient(135deg, #2a0d0f, #8f1212); border: 1px solid #6f1010;
     }
     .ampx-lightbox {
       min-height: 100vh;
@@ -265,10 +311,65 @@
     }
     .ampx-lightbox__step-num {
       flex-shrink: 0; width: 22px; height: 22px;
-      background: var(--green); color: #000;
+      background: var(--accent); color: #fff;
       border-radius: 50%; display: inline-flex;
       align-items: center; justify-content: center;
       font-size: 11px; font-weight: 700; margin-top: 1px;
+    }
+    .ampx-article {
+      margin: 16px 14px 0;
+      padding: 18px 16px;
+      background: linear-gradient(180deg, #171010 0%, #110c0c 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.24);
+    }
+    .ampx-article__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: rgba(255,77,77,.1);
+      border: 1px solid rgba(255,77,77,.2);
+      color: var(--soft2);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+    .ampx-article__title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      line-height: .96;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .ampx-article__title span {
+      color: var(--accent);
+    }
+    .ampx-article__body p {
+      color: #e8dddd;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .ampx-article__body p:last-child {
+      margin-bottom: 0;
+    }
+    .ampx-article__list {
+      list-style: none;
+      margin: 0 0 14px;
+      display: grid;
+      gap: 8px;
+    }
+    .ampx-article__list li {
+      padding: 10px 12px;
+      background: rgba(255,77,77,.06);
+      border: 1px solid rgba(255,77,77,.14);
+      border-radius: 10px;
+      color: #f0e4e4;
+      line-height: 1.55;
     }
 
     .ampx-lightbox__steps { list-style: none; margin-bottom: 16px }
@@ -305,6 +406,7 @@
       .ampx-hero,
       .ampx-authbar,
       .ampx-apk,
+      .ampx-article,
       .ampx-section-head,
       .ampx-promo-banner,
       .ampx-contact,
@@ -396,6 +498,14 @@
       <amp-img src="https://cdn.patenkali.me/i/2025/12/22/299x3k-h20c.gif" width="970" height="150" layout="responsive" alt="Promo Banner slot777"></amp-img>
     </a>
   </div>
+  <section class="ampx-article">
+    <div class="ampx-article__eyebrow">Artikel Unggulan</div>
+    <h2 class="ampx-article__title">SLOT777 dan Pilihan <span>Game Favorit</span> yang Banyak Dicari</h2>
+    <div class="ampx-article__body">
+      <p>SLOT777 dikenal sebagai situs slot gacor gampang menang yang banyak dicari pemain karena menghadirkan permainan yang terasa ringan, akses yang mudah, dan variasi game favorit yang cukup lengkap untuk dimainkan kapan saja. Banyak pemain lebih nyaman berada di platform yang pilihan gamenya beragam karena mereka bisa menyesuaikan permainan dengan selera, ritme bermain, serta target hiburan yang ingin dirasakan.</p>
+      <p>Konsep spin dikit jackpot juga menjadi alasan kenapa nama seperti SLOT777 cepat dikenal. Bagi sebagian pemain, permainan yang sederhana tetapi tetap punya peluang hasil besar terasa lebih menarik dibanding permainan yang terlalu rumit. Karena itu, platform dengan tampilan praktis dan pilihan game populer biasanya lebih cepat membangun minat pemain baru maupun pemain lama.</p>
+    </div>
+  </section>
   <div class="ampx-section-head ampx-section-head--tight">
   </div>
   <ul class="ampx-contact">
@@ -465,7 +575,7 @@
     </a>
     <a href="https://olx.recamweek.com/KOKITOTO/app-1.5-b16-21Aug23-113230-koki.apk" class="ampx-bottom-nav__item is-fab">
       <div class="ampx-bottom-nav__fab">
-        <span class="ampx-bottom-nav__fab-ico">APK</span>
+        <span class="ampx-bottom-nav__fab-ico"></span>
       </div>
       APK
     </a>
